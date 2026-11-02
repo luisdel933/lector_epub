@@ -1,0 +1,28 @@
+[package]
+name = "lector_epub"
+version = "0.1.0"
+edition = "2021"
+description = "Lector de libros EPUB con lectura en voz alta (voces del sistema y voces en línea)"
+
+[dependencies]
+# Interfaz gráfica
+eframe = "0.29"
+# Selector de archivos nativo
+rfd = "0.15"
+# Lectura de EPUB y extracción de texto
+epub = "2.1"
+scraper = "0.20"
+# Voces del sistema (SAPI/WinRT, AVFoundation, speech-dispatcher)
+tts = "0.26"
+# Voces neuronales en línea (Microsoft Edge, sin clave de API)
+msedge-tts = "0.2"
+# Reproducción de audio de las voces en línea
+rodio = "0.19"
+# Guardado de posición y ajustes
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+dirs = "5"
+
+[profile.release]
+opt-level = 3
+lto = true
